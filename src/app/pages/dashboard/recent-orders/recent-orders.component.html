@@ -18,9 +18,9 @@
             <tbody>
                 <tr *ngFor="let order of (orders$ | async)" (click)="router.navigate(['/orders'])" style="cursor: pointer;">
                     <td class="item-cell">
-                        <div class="icon-circle">
+                        <!-- <div class="icon-circle">
                             <span>{{ order.item?.[0] }}</span>
-                        </div>
+                        </div> -->
                         <span>{{ order.item }}</span>
                     </td>
                     <td>{{ order.quantity }}</td>
