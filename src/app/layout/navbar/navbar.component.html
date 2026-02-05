@@ -1,0 +1,29 @@
+<header class="navbar">
+    <div class="left-section">
+        <button class="toggle-btn" (click)="uiState.toggleSidebar()">
+            <span class="material-icons">menu</span>
+        </button>
+        <div class="search-container">
+            <span class="material-icons search-icon">search</span>
+            <input type="text" placeholder="Search" class="search-input">
+        </div>
+    </div>
+
+    <div class="actions-container">
+        <div class="action-icon">
+            <span class="material-icons">notifications</span>
+            <span class="badge"></span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="profile-section" (click)="auth.logout(); router.navigate(['/login'])">
+            <!-- Mock logout on click for now -->
+            <span class="username">{{ (auth.user$ | async)?.name || 'Johny Larsen' }}</span>
+            <div class="avatar">
+                <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User">
+            </div>
+            <span class="material-icons dropdown-arrow">expand_more</span>
+        </div>
+    </div>
+</header>

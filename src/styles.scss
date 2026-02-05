@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-color: #F8F9FD;
+    --sidebar-bg: #FFFFFF;
+    --primary-color: #3B86FF;
+    --text-dark: #3D3D3D;
+    --text-gray: #A4A6B3;
+    --text-light-gray: #DDE2FF;
+    --success-color: #2ECC71;
+    --danger-color: #E74C3C;
+    --warning-color: #FEC400;
+    --border-color: #DFE0EB;
+
+    /* Spacing */
+    --sidebar-width: 255px;
+    --header-height: 70px;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    /* Updated to Inter as per mockup feel */
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Application Layout Structure */
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+app-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Material Icons Alignment */
+.material-icons {
+    vertical-align: middle;
+    font-size: 20px;
+}

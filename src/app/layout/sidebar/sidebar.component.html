@@ -1,0 +1,29 @@
+<div class="sidebar-container" [class.collapsed]="isCollapsed$ | async">
+    <div class="logo-container">
+        <div class="logo-icon">
+            <span class="material-icons">layers</span>
+        </div>
+        <span class="brand-name" *ngIf="!(isCollapsed$ | async)">Mahmoud H6</span>
+    </div>
+
+    <div class="menu-container">
+        <ng-container *ngFor="let item of mainMenuItems">
+            <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="menu-item" [title]="item.label">
+                <span class="material-icons">{{ item.icon }}</span>
+                <span class="label" *ngIf="!(isCollapsed$ | async)">{{ item.label }}</span>
+            </a>
+        </ng-container>
+
+        <div class="divider"></div>
+
+        <ng-container *ngFor="let item of secondaryMenuItems">
+            <a [routerLink]="item.link" routerLinkActive="active" class="menu-item" [title]="item.label">
+                <span class="material-icons">{{ item.icon }}</span>
+                <span class="label" *ngIf="!(isCollapsed$ | async)">{{ item.label }}</span>
+                <span *ngIf="item.badge && !(isCollapsed$ | async)" class="badge"></span>
+            </a>
+        </ng-container>
+    </div>
+
+</div>

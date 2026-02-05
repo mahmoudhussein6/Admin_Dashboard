@@ -1,0 +1,22 @@
+<div class="reports-page">
+    <h1>Reports & Analytics</h1>
+
+    <div class="loading-state" *ngIf="loading$ | async">
+        <div class="spinner"></div>
+        <p>Loading reports...</p>
+    </div>
+
+    <div class="reports-grid" *ngIf="!(loading$ | async)">
+        <!-- Stats Cards -->
+        <div class="stats-section">
+            <app-stat-card *ngFor="let stat of (stats$ | async)" [title]="stat.title" [value]="stat.value"
+                [icon]="stat.icon" [trend]="stat.trend"></app-stat-card>
+        </div>
+
+        <!-- Revenue Chart -->
+        <div class="chart-section">
+            <app-chart-card title="Monthly Revenue" [chartData]="revenueChartData" [chartOptions]="revenueChartOptions"
+                [chartType]="'bar'"></app-chart-card>
+        </div>
+    </div>
+</div>

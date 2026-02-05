@@ -1,0 +1,131 @@
+:host {
+    display: block;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h3 {
+        margin: 0;
+        font-size: 19px;
+        color: var(--text-dark);
+    }
+
+    .view-all {
+        font-size: 14px;
+        color: var(--primary-color);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+
+    th {
+        text-align: left;
+        color: var(--text-gray);
+        font-weight: 500;
+        font-size: 14px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+        padding: 16px 0;
+        font-size: 14px;
+        color: var(--text-dark);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+.item-cell {
+    display: flex;
+    align-items: center;
+
+    > span {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .icon-circle {
+        width: 32px;
+        height: 32px;
+        background: #F0F0F0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+
+        .material-icons {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+    }
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+
+    &.pending {
+        background: rgba(59, 134, 255, 0.1);
+        color: var(--primary-color);
+    }
+
+    &.approved {
+        background: rgba(46, 204, 113, 0.1);
+        color: var(--success-color);
+    }
+
+    &.in-progress {
+        background: rgba(254, 196, 0, 0.1);
+        color: var(--warning-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .orders-table {
+        min-width: 560px;
+    }
+}

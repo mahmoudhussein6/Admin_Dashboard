@@ -1,0 +1,86 @@
+:host {
+    display: block;
+    padding: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: auto auto auto;
+    /* Stats, Charts, Table */
+    gap: 30px;
+}
+
+/* Stats Row: 4 cards across */
+app-stat-card {
+    grid-column: span 1;
+}
+
+/* Charts Row */
+.charts-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* 2/3 for main chart, 1/3 for small chart */
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.main-chart-card {
+    height: 400px;
+}
+
+.small-chart-card {
+    height: 400px;
+}
+
+/* Table Row */
+.recent-orders-container {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+    :host {
+        padding: 20px;
+    }
+
+    .dashboard-grid {
+        gap: 20px;
+    }
+
+    .charts-row {
+        grid-template-columns: 1fr;
+    }
+
+    .main-chart-card,
+    .small-chart-card {
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    :host {
+        padding: 14px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .main-chart-card,
+    .small-chart-card {
+        height: 320px;
+    }
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 18px;
+    color: var(--text-gray);
+}

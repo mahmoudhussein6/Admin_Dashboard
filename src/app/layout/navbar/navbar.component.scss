@@ -1,0 +1,157 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.navbar {
+    height: var(--header-height);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: rgba(59, 134, 255, 0.05);
+        color: var(--primary-color);
+    }
+
+    .material-icons {
+        font-size: 24px;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    /* Or transparent depending on design. Mockup shows search input typically on light bg */
+    padding: 0 16px;
+    height: 40px;
+    width: 300px;
+
+    /* If the design has the search bar blending into the background, we remove white bg */
+    background: transparent;
+
+    .search-icon {
+        color: var(--text-gray);
+        margin-right: 8px;
+    }
+
+    .search-input {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: inherit;
+        font-size: 14px;
+        width: 100%;
+        color: var(--text-dark);
+
+        &::placeholder {
+            color: var(--text-gray);
+        }
+    }
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+}
+
+.action-icon {
+    position: relative;
+    margin-right: 24px;
+    cursor: pointer;
+    color: var(--text-gray);
+
+    .badge {
+        position: absolute;
+        top: 0;
+        right: 2px;
+        width: 6px;
+        height: 6px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        border: 1px solid #fff;
+    }
+
+    &:hover {
+        color: var(--text-dark);
+    }
+}
+
+.divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-color);
+    margin-right: 24px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .username {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-right: 14px;
+    }
+
+    .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 8px;
+        border: 2px solid #DFE0EB;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .dropdown-arrow {
+        color: var(--text-gray);
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 14px;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .profile-section {
+        .username {
+            display: none;
+        }
+    }
+}

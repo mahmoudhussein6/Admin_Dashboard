@@ -1,0 +1,49 @@
+.reports-page {
+    padding: 32px;
+
+    h1 {
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 32px;
+    }
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 16px;
+
+    .spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid var(--border-color);
+        border-top-color: var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.reports-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.chart-section {
+    margin-top: 24px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

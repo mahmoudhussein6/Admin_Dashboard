@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="card-header">
+        <h4>{{ title }}</h4>
+    </div>
+    <div class="chart-container">
+        <canvas baseChart [data]="resolvedData" [options]="resolvedOptions" [type]="chartType">
+        </canvas>
+    </div>
+</div>

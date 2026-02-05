@@ -1,0 +1,17 @@
+<div class="card-content">
+    <div class="icon-container" [ngClass]="iconColor">
+        <span class="material-icons">{{ icon }}</span>
+    </div>
+
+    <div class="info-container">
+        <span class="title">{{ title }}</span>
+        <div class="value-row">
+            <span class="value">{{ value }}</span>
+            <div *ngIf="trend" class="trend-badge" [ngClass]="trendDirection">
+                <span class="material-icons arrow" *ngIf="trendDirection === 'up'">trending_up</span>
+                <span class="material-icons arrow" *ngIf="trendDirection === 'down'">trending_down</span>
+                <span class="trend-text">{{ trend }}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="layout" [class.sidebar-collapsed]="isCollapsed$ | async">
+    <div class="backdrop" *ngIf="!(isCollapsed$ | async)" (click)="uiState.setSidebarCollapsed(true)"></div>
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+    </div>
+</div>

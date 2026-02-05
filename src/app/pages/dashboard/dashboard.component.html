@@ -1,0 +1,25 @@
+<div *ngIf="loading$ | async" class="loading">Loading...</div>
+
+<div *ngIf="!(loading$ | async)" class="dashboard-grid">
+    <!-- Stats Cards -->
+    <app-stat-card *ngFor="let stat of (stats$ | async)" [title]="stat.title" [value]="stat.value" [icon]="stat.icon"
+        [trend]="stat.trend" [trendDirection]="stat.trendDirection || 'up'"
+        [iconColor]="stat.iconColor || 'blue'"></app-stat-card>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+        <div class="main-chart-card">
+            <app-chart-card title="Report" [data]="salesChartData" [options]="salesChartOptions">
+            </app-chart-card>
+        </div>
+        <div class="small-chart-card">
+            <app-chart-card title="Visits" [data]="visitsChartData" [options]="visitsChartOptions">
+            </app-chart-card>
+        </div>
+    </div>
+
+    <!-- Recent Orders Table -->
+    <div class="recent-orders-container">
+        <app-recent-orders></app-recent-orders>
+    </div>
+</div>
